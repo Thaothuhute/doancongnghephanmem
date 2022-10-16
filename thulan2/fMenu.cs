@@ -17,33 +17,51 @@ namespace quanliphongtro
             InitializeComponent();
         }
 
-        private void toolStripTextBoxQLTK_Click(object sender, EventArgs e)
+        private void toolStripTextBox6_Click(object sender, EventArgs e)
         {
-            fDoimatkhau doiMK= new fDoimatkhau();
-            doiMK.Show();
+            fThongke thongke = new fThongke();
+            thongke.Show();
         }
 
-        private void toolStripTextBoxQLPT_Click(object sender, EventArgs e)
+        private void toolStripButton6_Click(object sender, EventArgs e)
         {
-            fPhongtro phongtro=new fPhongtro();
-            phongtro.Show();
-        }
-
-        private void toolStripTextBoxQLHD_Click(object sender, EventArgs e)
-        {
-            fHopdong hopDong = new fHopdong();
-            hopDong.Show();
-        }
-
-        private void toolStripTextBoxQLKH_Click(object sender, EventArgs e)
-        {
-            fKhachhang khachHang = new fKhachhang();
-            khachHang.Show();
+            fThongke f = new fThongke();
+            f.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+            fDoimatkhau doiMK = new fDoimatkhau();
+            doiMK.ShowDialog();
+        }
+
+        private void toolStripTextBox2_Click(object sender, EventArgs e)
+        {
+            fHopdong hopdong = new fHopdong();
+            hopdong.ShowDialog();
+        }
+
+        private void toolStripTextBox3_Click(object sender, EventArgs e)
+        {
+            fPhongtro phongTro = new fPhongtro();
+            phongTro.ShowDialog();
+        }
+
+        private void toolStripTextBox4_Click(object sender, EventArgs e)
+        {
+            fKhachhang khachhang = new fKhachhang();
+            khachhang.ShowDialog();
+        }
+
+        private void toolStripTextBox5_Click(object sender, EventArgs e)
+        {
+            fThuephong thuephong = new fThuephong();
+            thuephong.ShowDialog();
         }
     }
 }
