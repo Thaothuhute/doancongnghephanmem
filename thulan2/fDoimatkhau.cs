@@ -1,4 +1,4 @@
-﻿using quanliphongtro.Model;
+﻿using thulan2.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using quanliphongtro.Model;
+using thulan2.Model;
 using System.Data.SqlClient;
 
 namespace quanliphongtro
