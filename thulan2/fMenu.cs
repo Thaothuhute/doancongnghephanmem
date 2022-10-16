@@ -34,6 +34,11 @@ namespace quanliphongtro
         //    fHopdong hopDong = new fHopdong();
         //    hopDong.Show();
         //}
+        private void toolStripTextBoxQLHD_Click(object sender, EventArgs e)
+        {
+            fHopdong hopDong = new fHopdong();
+            hopDong.Show();
+        }
 
         private void toolStripTextBoxQLKH_Click(object sender, EventArgs e)
         {
