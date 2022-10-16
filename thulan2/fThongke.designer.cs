@@ -939,7 +939,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximumSize = new System.Drawing.Size(1497, 663);
+            this.MinimumSize = new System.Drawing.Size(1497, 663);
             this.Name = "fThongke";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fThongke";
             this.panel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
