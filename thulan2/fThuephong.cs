@@ -9,7 +9,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using quanliphongtro.Model;
+using thulan2.Model;
 
 namespace quanliphongtro
 {
@@ -162,7 +162,7 @@ namespace quanliphongtro
                         kh = new KHACHHANG() { Makh = "KH" + (liskh.Count + 1).ToString() + "", CMND = txtCccd.Text, Tenkh = txtTenkhach.Text, MinhchungCMND = pictureBox1.ImageLocation.ToString(), gioitinh = true };
                     }
                     List<HOPDONG> lishd = context.HOPDONGs.ToList();
-                    int a;
+                    
                     HOPDONG hd = new HOPDONG()
                     {
                         Mahd = "HD" + (lishd.Count + 1).ToString() + "",

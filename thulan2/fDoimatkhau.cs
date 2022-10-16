@@ -77,5 +77,10 @@ namespace quanliphongtro
         {
           
         }
+
+        private void txtTaikhoan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
