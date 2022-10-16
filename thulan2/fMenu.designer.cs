@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMenu));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBoxQLTK = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBoxQLHD = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBoxQLPT = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBoxQLKH = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBoxThuePhong = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBoxThongke = new System.Windows.Forms.ToolStripTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -65,59 +65,109 @@
             this.toolStripTextBoxThongke});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1214, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(1214, 31);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // toolStripTextBoxQLTK
             // 
             this.toolStripTextBoxQLTK.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.toolStripTextBoxQLTK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBoxQLTK.Name = "toolStripTextBoxQLTK";
-            this.toolStripTextBoxQLTK.Size = new System.Drawing.Size(140, 38);
+            this.toolStripTextBoxQLTK.Size = new System.Drawing.Size(140, 31);
             this.toolStripTextBoxQLTK.Text = "Quản lí tài khoản";
             this.toolStripTextBoxQLTK.Click += new System.EventHandler(this.toolStripTextBoxQLTK_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButton2.Text = "toolStripButton2";
             // 
             // toolStripTextBoxQLHD
             // 
             this.toolStripTextBoxQLHD.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.toolStripTextBoxQLHD.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBoxQLHD.Name = "toolStripTextBoxQLHD";
-            this.toolStripTextBoxQLHD.Size = new System.Drawing.Size(147, 38);
+            this.toolStripTextBoxQLHD.Size = new System.Drawing.Size(147, 31);
             this.toolStripTextBoxQLHD.Text = "Quản lí hợp đồng";
+            this.toolStripTextBoxQLHD.Click += new System.EventHandler(this.toolStripTextBoxQLHD_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButton3.Text = "toolStripButton3";
             // 
             // toolStripTextBoxQLPT
             // 
             this.toolStripTextBoxQLPT.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.toolStripTextBoxQLPT.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBoxQLPT.Name = "toolStripTextBoxQLPT";
-            this.toolStripTextBoxQLPT.Size = new System.Drawing.Size(150, 38);
+            this.toolStripTextBoxQLPT.Size = new System.Drawing.Size(150, 31);
             this.toolStripTextBoxQLPT.Text = "Quản lí phòng trọ";
             this.toolStripTextBoxQLPT.Click += new System.EventHandler(this.toolStripTextBoxQLPT_Click);
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButton4.Text = "toolStripButton4";
             // 
             // toolStripTextBoxQLKH
             // 
             this.toolStripTextBoxQLKH.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.toolStripTextBoxQLKH.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBoxQLKH.Name = "toolStripTextBoxQLKH";
-            this.toolStripTextBoxQLKH.Size = new System.Drawing.Size(160, 38);
+            this.toolStripTextBoxQLKH.Size = new System.Drawing.Size(160, 31);
             this.toolStripTextBoxQLKH.Text = "Quản lí khách hàng";
             this.toolStripTextBoxQLKH.Click += new System.EventHandler(this.toolStripTextBoxQLKH_Click);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButton5.Text = "toolStripButton5";
             // 
             // toolStripTextBoxThuePhong
             // 
             this.toolStripTextBoxThuePhong.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.toolStripTextBoxThuePhong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBoxThuePhong.Name = "toolStripTextBoxThuePhong";
-            this.toolStripTextBoxThuePhong.Size = new System.Drawing.Size(105, 38);
+            this.toolStripTextBoxThuePhong.Size = new System.Drawing.Size(105, 31);
             this.toolStripTextBoxThuePhong.Text = "Quản lí thuê";
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButton6.Text = "toolStripButton6";
             // 
             // toolStripTextBoxThongke
             // 
             this.toolStripTextBoxThongke.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.toolStripTextBoxThongke.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBoxThongke.Name = "toolStripTextBoxThongke";
-            this.toolStripTextBoxThongke.Size = new System.Drawing.Size(171, 38);
+            this.toolStripTextBoxThongke.Size = new System.Drawing.Size(171, 31);
             this.toolStripTextBoxThongke.Text = "Thống kê doanh thu";
             // 
             // pictureBox1
@@ -129,64 +179,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(34, 33);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(34, 33);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
-            // toolStripTextBox2
-            // 
-          
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-       
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(34, 33);
-            this.toolStripButton3.Text = "toolStripButton3";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-          
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(34, 33);
-            this.toolStripButton4.Text = "toolStripButton4";
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-          
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(34, 33);
-            this.toolStripButton5.Text = "toolStripButton5";
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-           
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(34, 33);
-            this.toolStripButton6.Text = "toolStripButton6";
-        
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // fMenu
             // 

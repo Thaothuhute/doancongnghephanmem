@@ -50,7 +50,6 @@
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.grbTTPhongtro = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTim = new System.Windows.Forms.Button();
@@ -66,6 +65,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(65, 22);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblSophong
             // 
@@ -281,14 +281,6 @@
             this.panel1.Size = new System.Drawing.Size(339, 198);
             this.panel1.TabIndex = 12;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(148, 165);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 5;
-            // 
             // btnTim
             // 
             this.btnTim.Location = new System.Drawing.Point(130, 139);
@@ -314,7 +306,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(1194, 656);
+            this.ClientSize = new System.Drawing.Size(1192, 653);
             this.Controls.Add(this.lblQLPT);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grbTTPhongtro);
