@@ -17,7 +17,7 @@ namespace thulan2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fThongke());
+            Application.Run(new fThuephong());
         }
     }
 }

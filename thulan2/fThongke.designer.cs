@@ -29,15 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.dtpNgaylap = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtDien = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txtSonuoc = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txtTang = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtSop = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,7 +44,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtTenkhach = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpTuongtactim = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTimp = new System.Windows.Forms.Button();
             this.btnHuyp = new System.Windows.Forms.Button();
             this.btnXuatdgv = new System.Windows.Forms.Button();
@@ -76,8 +73,8 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.dgvThongkehd = new System.Windows.Forms.DataGridView();
             this.Te = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,7 +90,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdbThang = new System.Windows.Forms.RadioButton();
             this.rdbPhong = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpTuongtacxuat = new System.Windows.Forms.FlowLayoutPanel();
             this.btnXuatrpt = new System.Windows.Forms.Button();
             this.btnXuatallrpt = new System.Windows.Forms.Button();
             this.btnHuyrpt = new System.Windows.Forms.Button();
@@ -105,9 +102,6 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label14 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.txtTyle = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
             this.txtTonghoadon = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -115,13 +109,12 @@
             this.txtTongdoanhthu = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel23.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.flpTuongtactim.SuspendLayout();
             this.panel8.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -136,10 +129,9 @@
             this.panel18.SuspendLayout();
             this.panel17.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
+            this.flpTuongtacxuat.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel19.SuspendLayout();
-            this.panel22.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel20.SuspendLayout();
             this.SuspendLayout();
@@ -147,9 +139,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.panel23);
             this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
@@ -158,17 +149,46 @@
             this.panel1.Size = new System.Drawing.Size(908, 89);
             this.panel1.TabIndex = 0;
             // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.dtpNgaylap);
+            this.panel23.Controls.Add(this.label18);
+            this.panel23.Location = new System.Drawing.Point(373, 47);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(302, 38);
+            this.panel23.TabIndex = 5;
+            // 
+            // dtpNgaylap
+            // 
+            this.dtpNgaylap.Enabled = false;
+            this.dtpNgaylap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaylap.Location = new System.Drawing.Point(105, 9);
+            this.dtpNgaylap.Name = "dtpNgaylap";
+            this.dtpNgaylap.Size = new System.Drawing.Size(194, 22);
+            this.dtpNgaylap.TabIndex = 1;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(3, 9);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(46, 16);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Ngay: ";
+            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.txtDien);
             this.panel7.Controls.Add(this.label6);
-            this.panel7.Location = new System.Drawing.Point(681, 47);
+            this.panel7.Location = new System.Drawing.Point(678, 3);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(224, 38);
             this.panel7.TabIndex = 5;
             // 
             // txtDien
             // 
+            this.txtDien.Enabled = false;
             this.txtDien.Location = new System.Drawing.Point(105, 9);
             this.txtDien.Name = "txtDien";
             this.txtDien.Size = new System.Drawing.Size(116, 22);
@@ -183,58 +203,6 @@
             this.label6.Size = new System.Drawing.Size(56, 16);
             this.label6.TabIndex = 0;
             this.label6.Text = "So dien:";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.txtSonuoc);
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Location = new System.Drawing.Point(681, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(224, 38);
-            this.panel6.TabIndex = 4;
-            // 
-            // txtSonuoc
-            // 
-            this.txtSonuoc.Location = new System.Drawing.Point(105, 9);
-            this.txtSonuoc.Name = "txtSonuoc";
-            this.txtSonuoc.Size = new System.Drawing.Size(116, 22);
-            this.txtSonuoc.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 16);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "So nuoc:";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.txtTang);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(376, 47);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(187, 38);
-            this.panel5.TabIndex = 4;
-            // 
-            // txtTang
-            // 
-            this.txtTang.Location = new System.Drawing.Point(105, 9);
-            this.txtTang.Name = "txtTang";
-            this.txtTang.Size = new System.Drawing.Size(76, 22);
-            this.txtTang.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 16);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Tang :";
             // 
             // panel4
             // 
@@ -251,6 +219,7 @@
             this.txtSop.Name = "txtSop";
             this.txtSop.Size = new System.Drawing.Size(194, 22);
             this.txtSop.TabIndex = 1;
+            this.txtSop.TextChanged += new System.EventHandler(this.txtSop_TextChanged);
             // 
             // label3
             // 
@@ -273,6 +242,7 @@
             // 
             // txtCccd
             // 
+            this.txtCccd.Enabled = false;
             this.txtCccd.Location = new System.Drawing.Point(121, 8);
             this.txtCccd.Name = "txtCccd";
             this.txtCccd.Size = new System.Drawing.Size(243, 22);
@@ -299,10 +269,12 @@
             // 
             // txtTenkhach
             // 
+            this.txtTenkhach.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtTenkhach.Location = new System.Drawing.Point(121, 8);
             this.txtTenkhach.Name = "txtTenkhach";
             this.txtTenkhach.Size = new System.Drawing.Size(243, 22);
             this.txtTenkhach.TabIndex = 1;
+            this.txtTenkhach.TextChanged += new System.EventHandler(this.txtTenkhach_TextChanged);
             // 
             // label1
             // 
@@ -313,20 +285,19 @@
             this.label1.Size = new System.Drawing.Size(112, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên khách hàng : ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // flowLayoutPanel1
+            // flpTuongtactim
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.flowLayoutPanel1.Controls.Add(this.btnTimp);
-            this.flowLayoutPanel1.Controls.Add(this.btnHuyp);
-            this.flowLayoutPanel1.Controls.Add(this.btnXuatdgv);
-            this.flowLayoutPanel1.Controls.Add(this.btnXuatdgvall);
-            this.flowLayoutPanel1.Controls.Add(this.btnReport);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(385, 155);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(535, 41);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.flpTuongtactim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.flpTuongtactim.Controls.Add(this.btnTimp);
+            this.flpTuongtactim.Controls.Add(this.btnHuyp);
+            this.flpTuongtactim.Controls.Add(this.btnXuatdgv);
+            this.flpTuongtactim.Controls.Add(this.btnXuatdgvall);
+            this.flpTuongtactim.Controls.Add(this.btnReport);
+            this.flpTuongtactim.Location = new System.Drawing.Point(385, 155);
+            this.flpTuongtactim.Name = "flpTuongtactim";
+            this.flpTuongtactim.Size = new System.Drawing.Size(535, 41);
+            this.flpTuongtactim.TabIndex = 1;
             // 
             // btnTimp
             // 
@@ -336,6 +307,7 @@
             this.btnTimp.TabIndex = 0;
             this.btnTimp.Text = "Tim";
             this.btnTimp.UseVisualStyleBackColor = true;
+            this.btnTimp.Click += new System.EventHandler(this.btnTimp_Click);
             // 
             // btnHuyp
             // 
@@ -363,6 +335,7 @@
             this.btnXuatdgvall.TabIndex = 4;
             this.btnXuatdgvall.Text = "Xuất tẩt cả";
             this.btnXuatdgvall.UseVisualStyleBackColor = true;
+            this.btnXuatdgvall.Click += new System.EventHandler(this.btnXuatdgvall_Click);
             // 
             // btnReport
             // 
@@ -372,7 +345,7 @@
             this.btnReport.TabIndex = 2;
             this.btnReport.Text = "Thong ke";
             this.btnReport.UseVisualStyleBackColor = true;
-            this.btnReport.Click += new System.EventHandler(this.button3_Click);
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // panel8
             // 
@@ -380,6 +353,7 @@
             this.panel8.Controls.Add(this.groupBox1);
             this.panel8.Controls.Add(this.panel10);
             this.panel8.Controls.Add(this.panel9);
+            this.panel8.Enabled = false;
             this.panel8.Location = new System.Drawing.Point(12, 155);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(367, 170);
@@ -395,7 +369,6 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Trang thai tien nha thang nay";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // rdbDathanhtoan
             // 
@@ -461,7 +434,6 @@
             this.txtsothang.Name = "txtsothang";
             this.txtsothang.Size = new System.Drawing.Size(157, 22);
             this.txtsothang.TabIndex = 1;
-            this.txtsothang.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label7
             // 
@@ -505,6 +477,7 @@
             this.panel12.Controls.Add(this.panel14);
             this.panel12.Controls.Add(this.panel13);
             this.panel12.Controls.Add(this.panel11);
+            this.panel12.Enabled = false;
             this.panel12.Location = new System.Drawing.Point(12, 331);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(367, 135);
@@ -567,7 +540,7 @@
             this.panel15.Controls.Add(this.dgvThongkehd);
             this.panel15.Location = new System.Drawing.Point(385, 202);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1081, 403);
+            this.panel15.Size = new System.Drawing.Size(1081, 364);
             this.panel15.TabIndex = 8;
             // 
             // dgvThongkehd
@@ -576,8 +549,8 @@
             this.dgvThongkehd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThongkehd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Te,
-            this.Column1,
             this.Column2,
+            this.Column1,
             this.Column3,
             this.Column4,
             this.Column5,
@@ -585,10 +558,12 @@
             this.Column7});
             this.dgvThongkehd.Location = new System.Drawing.Point(3, 3);
             this.dgvThongkehd.Name = "dgvThongkehd";
+            this.dgvThongkehd.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvThongkehd.RowHeadersWidth = 51;
             this.dgvThongkehd.RowTemplate.Height = 24;
-            this.dgvThongkehd.Size = new System.Drawing.Size(1078, 397);
+            this.dgvThongkehd.Size = new System.Drawing.Size(1078, 361);
             this.dgvThongkehd.TabIndex = 0;
+            this.dgvThongkehd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongkehd_CellContentClick);
             // 
             // Te
             // 
@@ -596,17 +571,17 @@
             this.Te.MinimumWidth = 6;
             this.Te.Name = "Te";
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Số phòng";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            // 
             // Column2
             // 
             this.Column2.HeaderText = "Ngày lập phiếu";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Số phòng";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
             // 
             // Column3
             // 
@@ -644,6 +619,7 @@
             this.panel16.Controls.Add(this.panel18);
             this.panel16.Controls.Add(this.panel17);
             this.panel16.Controls.Add(this.groupBox2);
+            this.panel16.Enabled = false;
             this.panel16.Location = new System.Drawing.Point(926, 60);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(540, 89);
@@ -687,6 +663,19 @@
             // cbbThang
             // 
             this.cbbThang.FormattingEnabled = true;
+            this.cbbThang.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
             this.cbbThang.Location = new System.Drawing.Point(197, 3);
             this.cbbThang.Name = "cbbThang";
             this.cbbThang.Size = new System.Drawing.Size(124, 24);
@@ -711,7 +700,6 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chọn phương thức thống kê";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // rdbThang
             // 
@@ -734,18 +722,20 @@
             this.rdbPhong.TabStop = true;
             this.rdbPhong.Text = "Theo phòng";
             this.rdbPhong.UseVisualStyleBackColor = true;
+            this.rdbPhong.CheckedChanged += new System.EventHandler(this.rdbPhong_CheckedChanged);
             // 
-            // flowLayoutPanel2
+            // flpTuongtacxuat
             // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.flowLayoutPanel2.Controls.Add(this.btnXuatrpt);
-            this.flowLayoutPanel2.Controls.Add(this.btnXuatallrpt);
-            this.flowLayoutPanel2.Controls.Add(this.btnHuyrpt);
-            this.flowLayoutPanel2.Controls.Add(this.btnThoatrpt);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(926, 155);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(540, 41);
-            this.flowLayoutPanel2.TabIndex = 3;
+            this.flpTuongtacxuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.flpTuongtacxuat.Controls.Add(this.btnXuatrpt);
+            this.flpTuongtacxuat.Controls.Add(this.btnXuatallrpt);
+            this.flpTuongtacxuat.Controls.Add(this.btnHuyrpt);
+            this.flpTuongtacxuat.Controls.Add(this.btnThoatrpt);
+            this.flpTuongtacxuat.Enabled = false;
+            this.flpTuongtacxuat.Location = new System.Drawing.Point(926, 155);
+            this.flpTuongtacxuat.Name = "flpTuongtacxuat";
+            this.flpTuongtacxuat.Size = new System.Drawing.Size(540, 41);
+            this.flpTuongtacxuat.TabIndex = 3;
             // 
             // btnXuatrpt
             // 
@@ -755,6 +745,7 @@
             this.btnXuatrpt.TabIndex = 0;
             this.btnXuatrpt.Text = "Xuất";
             this.btnXuatrpt.UseVisualStyleBackColor = true;
+            this.btnXuatrpt.Click += new System.EventHandler(this.btnXuatrpt_Click);
             // 
             // btnXuatallrpt
             // 
@@ -764,6 +755,7 @@
             this.btnXuatallrpt.TabIndex = 3;
             this.btnXuatallrpt.Text = "Xuất tất cả";
             this.btnXuatallrpt.UseVisualStyleBackColor = true;
+            this.btnXuatallrpt.Click += new System.EventHandler(this.btnXuatallrpt_Click);
             // 
             // btnHuyrpt
             // 
@@ -782,6 +774,7 @@
             this.btnThoatrpt.TabIndex = 2;
             this.btnThoatrpt.Text = "Thoát";
             this.btnThoatrpt.UseVisualStyleBackColor = true;
+            this.btnThoatrpt.Click += new System.EventHandler(this.btnThoatrpt_Click);
             // 
             // menuStrip1
             // 
@@ -790,7 +783,7 @@
             this.chứcNăngPhụToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1479, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1470, 28);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -809,7 +802,6 @@
             this.phòngỞLâuNhấtToolStripMenuItem.Name = "phòngỞLâuNhấtToolStripMenuItem";
             this.phòngỞLâuNhấtToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
             this.phòngỞLâuNhấtToolStripMenuItem.Text = "Hóa đơn thanh toán rồi";
-            this.phòngỞLâuNhấtToolStripMenuItem.Click += new System.EventHandler(this.phòngỞLâuNhấtToolStripMenuItem_Click);
             // 
             // phòngCóĐiệnNướcBấtThườngToolStripMenuItem
             // 
@@ -836,39 +828,13 @@
             // panel19
             // 
             this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.panel19.Controls.Add(this.panel22);
             this.panel19.Controls.Add(this.panel21);
             this.panel19.Controls.Add(this.panel20);
+            this.panel19.Enabled = false;
             this.panel19.Location = new System.Drawing.Point(12, 472);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(367, 133);
+            this.panel19.Size = new System.Drawing.Size(367, 94);
             this.panel19.TabIndex = 12;
-            // 
-            // panel22
-            // 
-            this.panel22.Controls.Add(this.txtTyle);
-            this.panel22.Controls.Add(this.label17);
-            this.panel22.Location = new System.Drawing.Point(3, 91);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(361, 38);
-            this.panel22.TabIndex = 9;
-            // 
-            // txtTyle
-            // 
-            this.txtTyle.Location = new System.Drawing.Point(201, 6);
-            this.txtTyle.Name = "txtTyle";
-            this.txtTyle.Size = new System.Drawing.Size(157, 22);
-            this.txtTyle.TabIndex = 1;
-            // 
-            // label17
-            // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(3, 9);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(113, 16);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "So với tháng trước";
             // 
             // panel21
             // 
@@ -927,37 +893,35 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1479, 616);
+            this.ClientSize = new System.Drawing.Size(1470, 574);
             this.Controls.Add(this.panel19);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.panel16);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel12);
-            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.flpTuongtacxuat);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flpTuongtactim);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(1497, 663);
-            this.MinimumSize = new System.Drawing.Size(1497, 663);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fThongke";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fThongke";
             this.panel1.ResumeLayout(false);
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flpTuongtactim.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -981,12 +945,10 @@
             this.panel17.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flpTuongtacxuat.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel19.ResumeLayout(false);
-            this.panel22.ResumeLayout(false);
-            this.panel22.PerformLayout();
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
             this.panel20.ResumeLayout(false);
@@ -1004,12 +966,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox txtDien;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox txtSonuoc;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox txtTang;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txtSop;
         private System.Windows.Forms.Label label3;
@@ -1017,7 +973,7 @@
         private System.Windows.Forms.TextBox txtCccd;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTenkhach;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flpTuongtactim;
         private System.Windows.Forms.Button btnTimp;
         private System.Windows.Forms.Button btnHuyp;
         private System.Windows.Forms.Button btnReport;
@@ -1043,14 +999,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.DataGridView dgvThongkehd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Te;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Panel panel18;
@@ -1061,7 +1009,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RadioButton rdbThang;
         private System.Windows.Forms.RadioButton rdbPhong;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flpTuongtacxuat;
         private System.Windows.Forms.Button btnXuatrpt;
         private System.Windows.Forms.Button btnHuyrpt;
         private System.Windows.Forms.Button btnThoatrpt;
@@ -1080,9 +1028,17 @@
         private System.Windows.Forms.TextBox txtTongdoanhthu;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
-        private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.TextBox txtTyle;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnXuatallrpt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Te;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.DateTimePicker dtpNgaylap;
+        private System.Windows.Forms.Label label18;
     }
 }
