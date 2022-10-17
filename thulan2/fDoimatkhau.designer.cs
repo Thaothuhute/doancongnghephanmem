@@ -97,6 +97,7 @@
             this.btnDoiMK.TabIndex = 3;
             this.btnDoiMK.Text = "Đổi mật khẩu";
             this.btnDoiMK.UseVisualStyleBackColor = false;
+            this.btnDoiMK.Click += new System.EventHandler(this.btnDoiMK_Click);
             // 
             // lblNhaplai
             // 

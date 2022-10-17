@@ -112,7 +112,6 @@
     <Compile Include="Model\PHIEUTHANHTOAN.cs" />
     <Compile Include="Model\PHONG.cs" />
     <Compile Include="Model\phongtroDBContext.cs" />
-    <Compile Include="Model\sysdiagram.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fDangnhap.resx">
@@ -161,6 +160,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="picture\2-thiet-ke-nha-tro-12m2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
