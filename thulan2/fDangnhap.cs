@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using quanliphongtro.Model;
+using thulan2.Model;
 
 namespace quanliphongtro
 {

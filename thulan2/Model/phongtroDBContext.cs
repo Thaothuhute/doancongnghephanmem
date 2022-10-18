@@ -8,7 +8,7 @@ namespace thulan2.Model
     public partial class phongtroDBContext : DbContext
     {
         public phongtroDBContext()
-            : base("name=phongtroDBContext1")
+            : base("name=phongtroDBContext")
         {
         }
 
