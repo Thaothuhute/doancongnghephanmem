@@ -31,6 +31,10 @@
             this.lblSophong = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvPhongtro = new System.Windows.Forms.DataGridView();
+            this.colSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSotang = new System.Windows.Forms.Label();
             this.lblGia = new System.Windows.Forms.Label();
             this.lblTrangthai = new System.Windows.Forms.Label();
@@ -47,10 +51,6 @@
             this.btnTim = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.lblQLPT = new System.Windows.Forms.Label();
-            this.colSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangthai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhongtro)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -97,6 +97,34 @@
             this.dgvPhongtro.RowTemplate.Height = 28;
             this.dgvPhongtro.Size = new System.Drawing.Size(915, 363);
             this.dgvPhongtro.TabIndex = 3;
+            // 
+            // colSP
+            // 
+            this.colSP.HeaderText = "Số phòng";
+            this.colSP.MinimumWidth = 8;
+            this.colSP.Name = "colSP";
+            this.colSP.Width = 150;
+            // 
+            // colST
+            // 
+            this.colST.HeaderText = "Số tầng";
+            this.colST.MinimumWidth = 8;
+            this.colST.Name = "colST";
+            this.colST.Width = 150;
+            // 
+            // colGia
+            // 
+            this.colGia.HeaderText = "Giá";
+            this.colGia.MinimumWidth = 8;
+            this.colGia.Name = "colGia";
+            this.colGia.Width = 150;
+            // 
+            // colTrangthai
+            // 
+            this.colTrangthai.HeaderText = "Trạng thái";
+            this.colTrangthai.MinimumWidth = 8;
+            this.colTrangthai.Name = "colTrangthai";
+            this.colTrangthai.Width = 150;
             // 
             // lblSotang
             // 
@@ -208,6 +236,10 @@
             // cbbST
             // 
             this.cbbST.FormattingEnabled = true;
+            this.cbbST.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
             this.cbbST.Location = new System.Drawing.Point(158, 58);
             this.cbbST.Name = "cbbST";
             this.cbbST.Size = new System.Drawing.Size(121, 28);
@@ -283,34 +315,6 @@
             this.lblQLPT.Size = new System.Drawing.Size(318, 32);
             this.lblQLPT.TabIndex = 7;
             this.lblQLPT.Text = "QUẢN LÍ PHÒNG TRỌ";
-            // 
-            // colSP
-            // 
-            this.colSP.HeaderText = "Số phòng";
-            this.colSP.MinimumWidth = 8;
-            this.colSP.Name = "colSP";
-            this.colSP.Width = 150;
-            // 
-            // colST
-            // 
-            this.colST.HeaderText = "Số tầng";
-            this.colST.MinimumWidth = 8;
-            this.colST.Name = "colST";
-            this.colST.Width = 150;
-            // 
-            // colGia
-            // 
-            this.colGia.HeaderText = "Giá";
-            this.colGia.MinimumWidth = 8;
-            this.colGia.Name = "colGia";
-            this.colGia.Width = 150;
-            // 
-            // colTrangthai
-            // 
-            this.colTrangthai.HeaderText = "Trạng thái";
-            this.colTrangthai.MinimumWidth = 8;
-            this.colTrangthai.Name = "colTrangthai";
-            this.colTrangthai.Width = 150;
             // 
             // fPhongtro
             // 

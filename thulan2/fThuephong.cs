@@ -26,6 +26,7 @@ namespace quanliphongtro
             btnHuy.Enabled = false;
             btnLuu.Enabled = false;
             btnMohinh.Enabled = false;
+            btnThem.Enabled = true;
             using (phongtroDBContext context = new phongtroDBContext())
             {
                 List<PHONG> pos = context.PHONGs.ToList();
@@ -138,7 +139,7 @@ namespace quanliphongtro
             txtSonuoc.Text = dgvPhong.Rows[index].Cells[1].Value.ToString();
             txtSodien.Text = dgvPhong.Rows[index].Cells[2].Value.ToString();
             cbbtang.SelectedValue = dgvPhong.Rows[index].Cells[3].Value.ToString();
-            cbbSophong.SelectedText = dgvPhong.Rows[index].Cells[0].Value.ToString();
+            cbbSophong.Text = dgvPhong.Rows[index].Cells[0].Value.ToString();
             
         }
 
@@ -159,7 +160,7 @@ namespace quanliphongtro
                     }
                     else
                     {
-                        kh = new KHACHHANG() { Makh = "KH" + (liskh.Count + 1).ToString() + "", CMND = txtCccd.Text, Tenkh = txtTenkhach.Text, MinhchungCMND = pictureBox1.ImageLocation.ToString(), gioitinh = true };
+                        kh = new KHACHHANG() { Makh = "KH" + (liskh.Count + 1).ToString() + "", CMND = txtCccd.Text, Tenkh = txtTenkhach.Text, MinhchungCMND = hinh, gioitinh = true };
                     }
                     List<HOPDONG> lishd = context.HOPDONGs.ToList();
                     
@@ -211,6 +212,7 @@ namespace quanliphongtro
 
                                 context.SaveChanges();
                                 MessageBox.Show("da cap nhat");
+                                hinh = "";
                             }
                             else
                             {
@@ -238,6 +240,7 @@ namespace quanliphongtro
                 pictureBox1.Image = img;
                 hinh = opf.FileName;
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                hinh = opf.FileName;
             }
         }
 
