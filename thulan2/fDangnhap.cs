@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using quanliphongtro.Model;
+using thulan2.Model;
 
 namespace quanliphongtro
 {
@@ -55,17 +55,6 @@ namespace quanliphongtro
             {
                 Application.Exit();
             }
-        }
-
-        private void btnDangnhap_Click_1(object sender, EventArgs e)
-        {
-            fMenu menu = new fMenu();
-            menu.Show();
-        }
-
-        private void btnThoat_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

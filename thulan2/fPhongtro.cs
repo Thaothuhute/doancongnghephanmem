@@ -31,12 +31,6 @@ namespace quanliphongtro
             cbbSP.DisplayMember = "Sop";
             cbbSP.ValueMember = "Sop";
         }
-        private void loafCbbTa(List<PHONG> tag)
-        {
-            cbbST.DataSource = tag;
-            cbbST.DisplayMember = "Tang";
-            cbbST.ValueMember = "Tang";
-        }
 
         private void loafCbbTT(List<PHONG> tth)
         {
@@ -65,7 +59,14 @@ namespace quanliphongtro
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            
+            using (phongtroDBContext context = new phongtroDBContext())
+            {
+                List<PHONG> pHONGs = context.PHONGs.ToList();
+                PHONG pHONG = new PHONG() { Sop = "PO" + pHONGs.Count, Tang = int.Parse((cbbST.SelectedIndex+1).ToString()), Trangthai = 0, Sodiendauthang = 0, Sonuocdauthang=0 };
+                context.PHONGs.Add(pHONG);
+                context.SaveChanges();
+                fPhongtro_Load(sender, e);
+            }    
         }
         public bool Kiemtradulieu()
         {
@@ -74,9 +75,7 @@ namespace quanliphongtro
                     MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK);
                     return false;
             }
-             else
-             {
-             }
+            return true;
         }
         private void loaddgv(List<PHONG> listPhong)
         {
@@ -98,9 +97,11 @@ namespace quanliphongtro
         }
         private void fPhongtro_Load(object sender, EventArgs e)
         {
-                List<PHONG> pHONGs = context.PHONGs.ToList();
+                List<PHONG> pHONGs = (from p in context.PHONGs.ToList()
+                                     where p.Trangthai!=3
+                                     select p).ToList();
                 loafCbbPo(pHONGs);
-                loafCbbTa(pHONGs);
+               // loafCbbTa(pHONGs);
                 loafCbbTT(pHONGs);
                 loaddgv(pHONGs);
         }
@@ -119,12 +120,17 @@ namespace quanliphongtro
                     DialogResult dr = MessageBox.Show("Bạn có muốn xóa?", "YES/NO", MessageBoxButtons.YesNo);
                     if(dr == DialogResult.Yes)
                     {
-                        dgvPhongtro.Rows.RemoveAt(selectRow);
+                        string dgv = dgvPhongtro.Rows[selectRow].Cells[0].Value.ToString();
+                        
+                        PHONG po = context.PHONGs.FirstOrDefault(p => p.Sop == dgv);
+                        po.Trangthai = 3;
+                        context.SaveChanges();
                         MessageBox.Show("Xóa phòng thành công!", "Thông báo", MessageBoxButtons.OK);
+                        fPhongtro_Load(sender, e);
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
