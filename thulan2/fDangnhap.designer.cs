@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblDangnhaptaikhoan = new System.Windows.Forms.Label();
-            this.txtTaikhoan = new System.Windows.Forms.TextBox();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.lblTaikhoan = new System.Windows.Forms.Label();
-            this.lblMatkhau = new System.Windows.Forms.Label();
             this.btnDangnhap = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.txtMatkhau = new System.Windows.Forms.TextBox();
+            this.txtTaikhoan = new System.Windows.Forms.TextBox();
+            this.lblMatkhau = new System.Windows.Forms.Label();
+            this.lblTaikhoan = new System.Windows.Forms.Label();
+            this.lblDangnhaptaikhoan = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,24 +55,17 @@
             this.panel1.Size = new System.Drawing.Size(1227, 416);
             this.panel1.TabIndex = 0;
             // 
-            // lblDangnhaptaikhoan
+            // btnDangnhap
             // 
-            this.lblDangnhaptaikhoan.AutoSize = true;
-            this.lblDangnhaptaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDangnhaptaikhoan.ForeColor = System.Drawing.Color.Indigo;
-            this.lblDangnhaptaikhoan.Location = new System.Drawing.Point(460, 16);
-            this.lblDangnhaptaikhoan.Name = "lblDangnhaptaikhoan";
-            this.lblDangnhaptaikhoan.Size = new System.Drawing.Size(306, 29);
-            this.lblDangnhaptaikhoan.TabIndex = 0;
-            this.lblDangnhaptaikhoan.Text = "ĐĂNG NHẬP TÀI KHOẢN";
-            // 
-            // txtTaikhoan
-            // 
-            this.txtTaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaikhoan.Location = new System.Drawing.Point(516, 105);
-            this.txtTaikhoan.Name = "txtTaikhoan";
-            this.txtTaikhoan.Size = new System.Drawing.Size(259, 26);
-            this.txtTaikhoan.TabIndex = 1;
+            this.btnDangnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangnhap.ForeColor = System.Drawing.Color.Indigo;
+            this.btnDangnhap.Location = new System.Drawing.Point(414, 286);
+            this.btnDangnhap.Name = "btnDangnhap";
+            this.btnDangnhap.Size = new System.Drawing.Size(169, 38);
+            this.btnDangnhap.TabIndex = 2;
+            this.btnDangnhap.Text = "Đăng nhập";
+            this.btnDangnhap.UseVisualStyleBackColor = true;
+            this.btnDangnhap.Click += new System.EventHandler(this.btnDangnhap_Click);
             // 
             // btnThoat
             // 
@@ -84,17 +77,23 @@
             this.btnThoat.TabIndex = 2;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click_1);
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // lblTaikhoan
+            // txtMatkhau
             // 
-            this.lblTaikhoan.AutoSize = true;
-            this.lblTaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTaikhoan.Location = new System.Drawing.Point(321, 104);
-            this.lblTaikhoan.Name = "lblTaikhoan";
-            this.lblTaikhoan.Size = new System.Drawing.Size(99, 25);
-            this.lblTaikhoan.TabIndex = 0;
-            this.lblTaikhoan.Text = "Tài khoản";
+            this.txtMatkhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatkhau.Location = new System.Drawing.Point(516, 189);
+            this.txtMatkhau.Name = "txtMatkhau";
+            this.txtMatkhau.Size = new System.Drawing.Size(259, 23);
+            this.txtMatkhau.TabIndex = 1;
+            // 
+            // txtTaikhoan
+            // 
+            this.txtTaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTaikhoan.Location = new System.Drawing.Point(516, 105);
+            this.txtTaikhoan.Name = "txtTaikhoan";
+            this.txtTaikhoan.Size = new System.Drawing.Size(259, 23);
+            this.txtTaikhoan.TabIndex = 1;
             // 
             // lblMatkhau
             // 
@@ -102,33 +101,34 @@
             this.lblMatkhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMatkhau.Location = new System.Drawing.Point(321, 190);
             this.lblMatkhau.Name = "lblMatkhau";
-            this.lblMatkhau.Size = new System.Drawing.Size(93, 25);
+            this.lblMatkhau.Size = new System.Drawing.Size(77, 20);
             this.lblMatkhau.TabIndex = 0;
             this.lblMatkhau.Text = "Mật khẩu";
             // 
-            // btnDangnhap
+            // lblTaikhoan
             // 
-            this.btnDangnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangnhap.ForeColor = System.Drawing.Color.Indigo;
-            this.btnDangnhap.Location = new System.Drawing.Point(414, 286);
-            this.btnDangnhap.Name = "btnDangnhap";
-            this.btnDangnhap.Size = new System.Drawing.Size(169, 38);
-            this.btnDangnhap.TabIndex = 2;
-            this.btnDangnhap.Text = "Đăng nhập";
-            this.btnDangnhap.UseVisualStyleBackColor = true;
-            this.btnDangnhap.Click += new System.EventHandler(this.btnDangnhap_Click_1);
+            this.lblTaikhoan.AutoSize = true;
+            this.lblTaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaikhoan.Location = new System.Drawing.Point(321, 104);
+            this.lblTaikhoan.Name = "lblTaikhoan";
+            this.lblTaikhoan.Size = new System.Drawing.Size(81, 20);
+            this.lblTaikhoan.TabIndex = 0;
+            this.lblTaikhoan.Text = "Tài khoản";
             // 
-            // txtMatkhau
+            // lblDangnhaptaikhoan
             // 
-            this.txtMatkhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatkhau.Location = new System.Drawing.Point(516, 189);
-            this.txtMatkhau.Name = "txtMatkhau";
-            this.txtMatkhau.Size = new System.Drawing.Size(259, 26);
-            this.txtMatkhau.TabIndex = 1;
+            this.lblDangnhaptaikhoan.AutoSize = true;
+            this.lblDangnhaptaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDangnhaptaikhoan.ForeColor = System.Drawing.Color.Indigo;
+            this.lblDangnhaptaikhoan.Location = new System.Drawing.Point(460, 16);
+            this.lblDangnhaptaikhoan.Name = "lblDangnhaptaikhoan";
+            this.lblDangnhaptaikhoan.Size = new System.Drawing.Size(262, 25);
+            this.lblDangnhaptaikhoan.TabIndex = 0;
+            this.lblDangnhaptaikhoan.Text = "ĐĂNG NHẬP TÀI KHOẢN";
             // 
             // fDangnhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(1367, 479);

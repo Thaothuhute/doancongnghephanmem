@@ -56,16 +56,5 @@ namespace quanliphongtro
                 Application.Exit();
             }
         }
-
-        private void btnDangnhap_Click_1(object sender, EventArgs e)
-        {
-            fMenu menu = new fMenu();
-            menu.Show();
-        }
-
-        private void btnThoat_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

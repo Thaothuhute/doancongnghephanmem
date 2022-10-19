@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +13,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using thulan2;
 using thulan2.Model;
 
 
@@ -74,6 +77,7 @@ namespace quanliphongtro
             txtTenkhach.Clear();
             txtSop.Clear();
             rdbThang.Checked = true;
+            btnXuatdgv.Enabled = true;
         }
         private void Filldatagrid(List<CTDICHVU> ptt, List<HOPDONG> lhd)
         {
@@ -141,96 +145,113 @@ namespace quanliphongtro
                 btnTimp.Enabled = false;
             }
         }
+        private bool checkname(string name)
+        {
+            var withoutSpecial = new string(name.Where(c => Char.IsLetterOrDigit(c)
+                                            || Char.IsWhiteSpace(c)).ToArray());
 
+            if (name != withoutSpecial)
+            {
+                return true;
+            }
+            return false;
+        }
 
         private void btnTimp_Click(object sender, EventArgs e)
         {
-            if (txtTenkhach.Text != "")
+            if (!checkname(txtTenkhach.Text)) 
             {
-                try
+                if (txtTenkhach.Text != "")
                 {
-
-                    using (phongtroDBContext context = new phongtroDBContext())
+                    try
                     {
-                        KHACHHANG kh = context.KHACHHANGs.FirstOrDefault(p => p.Tenkh == txtTenkhach.Text);
-                        if (kh != null)
+
+                        using (phongtroDBContext context = new phongtroDBContext())
                         {
-                            List<HOPDONG> lishd = (from p in context.HOPDONGs.ToList()
-                                                   where p.KHACHHANG.Tenkh.StartsWith(txtTenkhach.Text)
-                                                   select p).ToList();
-
-                            List<CTDICHVU> lisctdc = (from p in context.CTDICHVUs.ToList()
-                                                      where p.PHONG.Sop == lishd.First().PHONG.Sop
-                                                      select p).ToList();
-
-                            List<CTDICHVU> lisctdcdien = new List<CTDICHVU>();
-                            foreach (CTDICHVU ite in lisctdc)
+                            KHACHHANG kh = context.KHACHHANGs.FirstOrDefault(p => p.Tenkh == txtTenkhach.Text);
+                            if (kh != null)
                             {
-                                string s = ite.DICHVU.Tendv.ToString();
-                                if (s == "Dien")
+                                List<HOPDONG> lishd = (from p in context.HOPDONGs.ToList()
+                                                       where p.KHACHHANG.Tenkh.StartsWith(txtTenkhach.Text)
+                                                       select p).ToList();
+
+                                List<CTDICHVU> lisctdc = (from p in context.CTDICHVUs.ToList()
+                                                          where p.PHONG.Sop == lishd.First().PHONG.Sop
+                                                          select p).ToList();
+
+                                List<CTDICHVU> lisctdcdien = new List<CTDICHVU>();
+                                foreach (CTDICHVU ite in lisctdc)
                                 {
-                                    lisctdcdien.Add(ite);
+                                    string s = ite.DICHVU.Tendv.ToString();
+                                    if (s == "Dien")
+                                    {
+                                        lisctdcdien.Add(ite);
+                                    }
                                 }
+                                Filldatagrid(lisctdcdien, lishd);
+
                             }
-                            Filldatagrid(lisctdcdien, lishd);
-                           
-                        }
-                        else
-                        {
-                            MessageBox.Show("khong tim thay");
-                        }
+                            else
+                            {
+                                MessageBox.Show("khong tim thay");
+                            }
 
 
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
                     }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
+                    try
+                    {
+
+                        using (phongtroDBContext context = new phongtroDBContext())
+                        {
+                            HOPDONG po = context.HOPDONGs.FirstOrDefault(p => p.PHONG.Sop == txtSop.Text);
+                            CTDICHVU po2 = context.CTDICHVUs.FirstOrDefault(p => p.PHONG.Sop == txtSop.Text);
+                            if (po != null && po2 != null)
+                            {
+                                List<HOPDONG> lishd = (from p in context.HOPDONGs.ToList()
+                                                       where p.PHONG.Sop.StartsWith(txtSop.Text)
+                                                       select p).ToList();
+
+                                List<CTDICHVU> lisctdc = (from p in context.CTDICHVUs.ToList()
+                                                          where p.PHONG.Sop.StartsWith(txtSop.Text)
+                                                          select p).ToList();
+
+                                List<CTDICHVU> lisctdcdien = new List<CTDICHVU>();
+                                foreach (CTDICHVU ite in lisctdc)
+                                {
+                                    string s = ite.DICHVU.Tendv.ToString();
+                                    if (s == "Dien")
+                                    {
+                                        lisctdcdien.Add(ite);
+                                    }
+                                }
+                                Filldatagrid(lisctdcdien, lishd);
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("khong tim thay");
+                            }
+
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
             else
             {
-                try
-                {
-
-                    using (phongtroDBContext context = new phongtroDBContext())
-                    {
-                        HOPDONG po = context.HOPDONGs.FirstOrDefault(p => p.PHONG.Sop ==  txtSop.Text);
-                        CTDICHVU po2 = context.CTDICHVUs.FirstOrDefault(p => p.PHONG.Sop == txtSop.Text);
-                        if (po != null && po2 != null)
-                        {
-                            List<HOPDONG> lishd = (from p in context.HOPDONGs.ToList()
-                                                   where p.PHONG.Sop.StartsWith(txtSop.Text)
-                                                   select p).ToList();
-
-                            List<CTDICHVU> lisctdc = (from p in context.CTDICHVUs.ToList()
-                                                      where p.PHONG.Sop.StartsWith(txtSop.Text) 
-                                                      select p).ToList();
-
-                            List<CTDICHVU> lisctdcdien = new List<CTDICHVU>();
-                            foreach (CTDICHVU ite in lisctdc)
-                            {
-                                string s = ite.DICHVU.Tendv.ToString();
-                                if (s == "Dien")
-                                {
-                                    lisctdcdien.Add(ite);
-                                }
-                            }
-                            Filldatagrid(lisctdcdien, lishd);
-                      
-                        }
-                        else
-                        {
-                            MessageBox.Show("khong tim thay");
-                        }
-
-
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                MessageBox.Show("thong tin nhap khong hop le");
             }
         }
 
@@ -458,6 +479,74 @@ namespace quanliphongtro
         {
             loaddata();
             resetcontrol();
+        }
+
+        private void phòngỞLâuNhấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fReportThanhtoan f = new fReportThanhtoan();
+            f.ShowDialog();
+            
+        }
+
+        private void phòngCóĐiệnNướcBấtThườngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fPhieuchuathanhtoan f = new fPhieuchuathanhtoan();
+            f.ShowDialog();
+        }
+        private void ToExcel(DataGridView dtg , string filename)
+        {
+            Microsoft.Office.Interop.Excel.Application excel;
+            Microsoft.Office.Interop.Excel.Workbook worbookl;
+            Microsoft.Office.Interop.Excel.Worksheet worksheet;
+            try
+            {
+                excel = new Microsoft.Office.Interop.Excel.Application();
+                excel.Visible = false;
+                excel.DisplayAlerts = false;
+
+                worbookl = excel.Workbooks.Add(Type.Missing);
+                worksheet = (Microsoft.Office.Interop.Excel.Worksheet)worbookl.Sheets["Sheet1"];
+
+                worksheet.Name = "Bao cao";
+
+                for(int  i= 0;i< dtg.ColumnCount; i++)
+                {
+                    worksheet.Cells[1, i + 1] = dtg.Columns[i].HeaderText;
+                }
+                for(int i =0;i < dtg.RowCount; i++)
+                {
+                    for(int j = 0;j < dtg.ColumnCount; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1] = dtg.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+                worbookl.SaveAs(filename);
+
+                worbookl.Close();
+                excel.Quit();
+                MessageBox.Show("Xuất dữ liệu ra Excel thành công!");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                worbookl = null;
+                worksheet = null;
+            }
+        }
+        private void btnXuatdgv_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel 97-2007 Workbook(*.xls)|*.xls|Excel Workbook(*.xlsx)|*.xlsx";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+               
+                ToExcel(dgvThongkehd, saveFileDialog1.FileName);
+              
+            }
         }
     }
     
