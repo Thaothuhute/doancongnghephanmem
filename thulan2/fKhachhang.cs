@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,59 +22,47 @@ namespace quanliphongtro
         }
 
         SqlConnection conn = new SqlConnection(@"Data Source = MSI\SQLEXPRESS; Initial Catalog = Qlyphongtro; Integrated Security = True");
-        private void openCon()
-        {
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-        }
-        private void closeCon()
-        {
-            if (conn.State == ConnectionState.Open)
-            {
-                conn.Close();
-            }
-        }
         private void form_loaf()
         {
-            openCon();
-            btnHuy.Enabled = false;
-            btnTim.Enabled = true;
-            btnXoa.Enabled = false;
-            btnSua.Enabled = true;
+            conn.Open();
             using (phongtroDBContext context = new phongtroDBContext())
             {
                 List<KHACHHANG> kh = context.KHACHHANGs.ToList();
-                Filldatagridkhach(kh);            
+                Filldatagridkhach(kh);
             }
 
         }
-
-
-        private void Filldatagridkhach(List<KHACHHANG> kh)
-        {
-            dgvKhachhang.Rows.Clear();
-            foreach (KHACHHANG item in kh)
-            {
-                int index = dgvKhachhang.Rows.Add();
-
-                dgvKhachhang.Rows[index].Cells[0].Value = item.Tenkh.ToString();
-                dgvKhachhang.Rows[index].Cells[1].Value = item.CMND.ToString();
-                dgvKhachhang.Rows[index].Cells[2].Value = item.Sdt.ToString();
-                dgvKhachhang.Rows[index].Cells[3].Value = item.gioitinh.ToString();
-            }
-        }
-
         private void loafCbbPo(List<PHONG> pos)
         {
             cbbSP.DataSource = pos;
             cbbSP.DisplayMember = "Sop";
             cbbSP.ValueMember = "Sop";
         }
+        private void Filldatagridkhach(List<KHACHHANG> kh)
+        {
+            dgvKhachhang.Rows.Clear();
+            foreach (KHACHHANG item in kh)
+            {
+                int index = dgvKhachhang.Rows.Add();
+                dgvKhachhang.Rows[index].Cells[0].Value = item.Tenkh.ToString();
+                string tenkh = item.Tenkh.ToString();
+                dgvKhachhang.Rows[index].Cells[1].Value = item.CMND.ToString();
+                dgvKhachhang.Rows[index].Cells[2].Value = item.Sdt.ToString();
+                if (item.gioitinh == true)
+                {
+                    dgvKhachhang.Rows[index].Cells[3].Value = "Nam";
+                }
+                else
+                {
+                    dgvKhachhang.Rows[index].Cells[3].Value = "Nu";
+                }
+
+                dgvKhachhang.Rows[index].Cells[4].Value = item.HOPDONGs.FirstOrDefault(p => p.KHACHHANG.Tenkh.StartsWith(tenkh)).Sop.ToString();
+            }
+        }
         private Boolean Exe(string cmd)
         {
-            openCon();
+
             Boolean check;
             try
             {
@@ -85,12 +74,11 @@ namespace quanliphongtro
             {
                 check = false;
             }
-            closeCon();
+            conn.Close();
             return check;
         }
         private DataTable Red(string cmd)
         {
-            openCon();
             DataTable dt = new DataTable();
             try
             {
@@ -101,14 +89,9 @@ namespace quanliphongtro
             catch (Exception)
             {
                 dt = null;
-                throw;
             }
-            closeCon();
+            conn.Close();
             return dt;
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            form_loaf();
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -117,17 +100,8 @@ namespace quanliphongtro
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            btnHuy.Enabled = true;
-            btnXoa.Enabled = true;
-            txtTenKhachHang.Enabled = true;
-            txtCMND.Enabled = true;
-            txtSDT.Enabled = true;
-
-            lblGioitinh.Enabled = true;
-            cbbSP.Enabled = true;
-            btnSua.Enabled = false;
-            Exe("UPDATE KHACHHANG SET Tenkh = N'" + txtTenKhachHang.Text + "', CMND = N'" + txtCMND.Text + "', Sdt = N'" + txtSDT.Text + "', gioitinh = N'"+lblGioitinh+"'" );
-
+            Exe("UPDATE KHACHHANG SET Sdt = N'" + txtSDT.Text + "' WHERE CMND = '" + txtCMND.Text + "'  ");
+            form_loaf();
         }
 
         private void dgvKhachhang_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -136,7 +110,7 @@ namespace quanliphongtro
             txtCMND.Text = dgvKhachhang.CurrentRow.Cells[1].Value.ToString();
             txtSDT.Text = dgvKhachhang.CurrentRow.Cells[2].Value.ToString();
             lblGioitinh.Text = dgvKhachhang.CurrentRow.Cells[3].Value.ToString();
-            cbbSP.Text = dgvKhachhang.CurrentRow.Cells[5].Value.ToString();
+            cbbSP.Text = dgvKhachhang.CurrentRow.Cells[4].Value.ToString();
 
         }
 
@@ -158,12 +132,24 @@ namespace quanliphongtro
 
         private void fKhachhang_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qlyphongtroDataSet.KHACHHANG' table. You can move, or remove it, as needed.
-            this.kHACHHANGTableAdapter.Fill(this.qlyphongtroDataSet.KHACHHANG);
-
+            form_loaf();    
         }
-    }
 
-        
-    
-}
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            DataTable dt = Red("SELECT * FROM KHACHHANG WHERE maTT = '" + txtTenKhachHang.Text + "' ");
+            if (dt != null)
+            {
+                dgvKhachhang.DataSource = dt;
+            }
+        }
+            private void btnHuy_Click(object sender, EventArgs e)
+            {
+                txtTenKhachHang.ResetText();
+                txtCMND.ResetText();
+                txtSDT.ResetText();
+                lblGioitinh.ResetText();
+                cbbSP.ResetText();
+            }
+    }
+ }

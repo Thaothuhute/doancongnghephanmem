@@ -48,14 +48,13 @@
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnTim = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.dgvKhachhang = new System.Windows.Forms.DataGridView();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.colTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.qlyphongtroDataSet = new thulan2.QlyphongtroDataSet();
             this.kHACHHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kHACHHANGTableAdapter = new thulan2.QlyphongtroDataSetTableAdapters.KHACHHANGTableAdapter();
@@ -112,6 +111,7 @@
             this.btnImage.TabIndex = 4;
             this.btnImage.Text = "IMAGE";
             this.btnImage.UseVisualStyleBackColor = true;
+            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
             // chbKhac
             // 
@@ -240,7 +240,6 @@
             this.panel1.Controls.Add(this.btnHuy);
             this.panel1.Controls.Add(this.btnTim);
             this.panel1.Controls.Add(this.btnSua);
-            this.panel1.Controls.Add(this.btnXoa);
             this.panel1.Location = new System.Drawing.Point(731, 193);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
@@ -249,43 +248,36 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(331, 5);
+            this.btnHuy.Location = new System.Drawing.Point(291, 5);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(66, 29);
+            this.btnHuy.Size = new System.Drawing.Size(106, 29);
             this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnTim
             // 
-            this.btnTim.Location = new System.Drawing.Point(226, 5);
+            this.btnTim.Location = new System.Drawing.Point(163, 5);
             this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(69, 29);
+            this.btnTim.Size = new System.Drawing.Size(102, 29);
             this.btnTim.TabIndex = 4;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(124, 5);
+            this.btnSua.Location = new System.Drawing.Point(37, 5);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(70, 29);
+            this.btnSua.Size = new System.Drawing.Size(100, 29);
             this.btnSua.TabIndex = 4;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(25, 5);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(67, 29);
-            this.btnXoa.TabIndex = 4;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // dgvKhachhang
             // 
@@ -306,18 +298,6 @@
             this.dgvKhachhang.Size = new System.Drawing.Size(1017, 195);
             this.dgvKhachhang.TabIndex = 2;
             this.dgvKhachhang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachhang_CellContentClick);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnThoat.Location = new System.Drawing.Point(1047, 446);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(84, 29);
-            this.btnThoat.TabIndex = 4;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // colTenKH
             // 
@@ -353,6 +333,18 @@
             this.colSP.MinimumWidth = 8;
             this.colSP.Name = "colSP";
             this.colSP.Width = 150;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnThoat.Location = new System.Drawing.Point(1047, 446);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(84, 29);
+            this.btnThoat.TabIndex = 4;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // qlyphongtroDataSet
             // 
@@ -414,7 +406,6 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.ComboBox cbbSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenKH;

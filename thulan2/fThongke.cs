@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using thulan2.Model;
-using System.Globalization;
+
 
 namespace quanliphongtro
 {
@@ -58,6 +58,10 @@ namespace quanliphongtro
 
         private void resetcontrol()
         {
+            txtTenkhach.Enabled = true;
+            txtsothang.Enabled = true;
+            txtTenkhach.Clear();
+            txtSop.Clear();
             btnTimp.Enabled = false;
             flpTuongtacxuat.Enabled = false;
             flpTuongtactim.Enabled = true;
@@ -73,6 +77,8 @@ namespace quanliphongtro
         }
         private void Filldatagrid(List<CTDICHVU> ptt, List<HOPDONG> lhd)
         {
+            dgvThongkehd.AllowUserToAddRows = false;
+           
             dgvThongkehd.Rows.Clear();
             foreach (CTDICHVU item in ptt)
             {
