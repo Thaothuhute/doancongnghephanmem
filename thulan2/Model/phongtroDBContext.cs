@@ -20,6 +20,7 @@ namespace thulan2.Model
         public virtual DbSet<PHIEUGIAHAN> PHIEUGIAHANs { get; set; }
         public virtual DbSet<PHIEUTHANHTOAN> PHIEUTHANHTOANs { get; set; }
         public virtual DbSet<PHONG> PHONGs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
