@@ -326,6 +326,7 @@
             this.btnXuatdgv.TabIndex = 3;
             this.btnXuatdgv.Text = "Xuất";
             this.btnXuatdgv.UseVisualStyleBackColor = true;
+            this.btnXuatdgv.Click += new System.EventHandler(this.btnXuatdgv_Click);
             // 
             // btnXuatdgvall
             // 
@@ -802,12 +803,14 @@
             this.phòngỞLâuNhấtToolStripMenuItem.Name = "phòngỞLâuNhấtToolStripMenuItem";
             this.phòngỞLâuNhấtToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
             this.phòngỞLâuNhấtToolStripMenuItem.Text = "Hóa đơn thanh toán rồi";
+            this.phòngỞLâuNhấtToolStripMenuItem.Click += new System.EventHandler(this.phòngỞLâuNhấtToolStripMenuItem_Click);
             // 
             // phòngCóĐiệnNướcBấtThườngToolStripMenuItem
             // 
             this.phòngCóĐiệnNướcBấtThườngToolStripMenuItem.Name = "phòngCóĐiệnNướcBấtThườngToolStripMenuItem";
             this.phòngCóĐiệnNướcBấtThườngToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
             this.phòngCóĐiệnNướcBấtThườngToolStripMenuItem.Text = "Hóa đơn chưa thanh toán";
+            this.phòngCóĐiệnNướcBấtThườngToolStripMenuItem.Click += new System.EventHandler(this.phòngCóĐiệnNướcBấtThườngToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 
@@ -893,6 +896,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(1470, 574);
             this.Controls.Add(this.panel19);
             this.Controls.Add(this.label14);
@@ -909,7 +913,7 @@
             this.Name = "fThongke";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fThongke";
+            this.Text = "Thong ke";
             this.panel1.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();

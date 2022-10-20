@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using thulan2.Model;
@@ -27,6 +28,7 @@ namespace quanliphongtro
             btnLuu.Enabled = false;
             btnMohinh.Enabled = false;
             btnThem.Enabled = true;
+           
             using (phongtroDBContext context = new phongtroDBContext())
             {
                 List<PHONG> pos = context.PHONGs.ToList();
@@ -113,9 +115,22 @@ namespace quanliphongtro
         {
             if(txtTenkhach.Text =="" || txtCccd.Text ==""||txtSodienthoai.Text == "")
             {
+                
                 return false;
             }
-            return true;
+            else
+            {
+                if (!checkphone(txtSodienthoai.Text,txtCccd.Text) || !checkname(txtTenkhach.Text) )
+                {
+                   
+                    bool check =checkphone(txtSodienthoai.Text,txtCccd.Text);
+                    if (check) { }
+                    return false;
+                }
+                else
+                    return true;
+            }
+
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -249,7 +264,25 @@ namespace quanliphongtro
             dtpHan.Value = dtpNgaythue.Value;
             dtpHan.Value = new DateTime(dtpNgaythue.Value.Year +1 , dtpNgaythue.Value.Month, dtpNgaythue.Value.Day) ;
         }
+        private bool checkphone(string number,string Id)
+        {
+            if( Regex.Match(number, @"^(\[0-9]{10,11}$)").Success && Regex.Match(Id, @"^(\[0-9]{12}$)").Success)
+            {
+                return true;
+            }
+            return false;
+        }
+        private bool checkname(string name)
+        {
+            var withoutSpecial = new string(name.Where(c => Char.IsLetterOrDigit(c)
+                                            || Char.IsWhiteSpace(c)).ToArray());
 
+            if (name != withoutSpecial)
+            {
+                return false;
+            }
+            return true;
+        }
         private void btnHuy_Click(object sender, EventArgs e)
         {
             txtCccd.Clear();
@@ -257,7 +290,9 @@ namespace quanliphongtro
             txtTenkhach.Clear();
             form_loaf();
             btnThem.Enabled = true;
-            
+            pictureBox1.Image = null;
+
+
         }
 
         private void dgvhopdong_CellContentClick(object sender, DataGridViewCellEventArgs e)
